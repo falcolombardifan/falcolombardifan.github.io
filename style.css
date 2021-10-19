@@ -1,0 +1,24 @@
+body{
+	background-image: url("bower.png");
+	background-repeat: repeat;
+	background-size: 100% auto;
+	background-color: blue;
+	color: green;
+}
+
+body h1 {
+	text-shadow: 3px 3px #00ff00;
+	color: white;
+	
+}
+
+a {
+	text-shadow: 5px 6px #800080;
+	color: orange;
+}
+
+.swag {
+    text-align: center;
+    color: red;
+    font-family: "Comic Sans MS;
+}
