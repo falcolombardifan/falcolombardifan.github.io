@@ -22,3 +22,11 @@ a {
     color: red;
     font-family: "Comic Sans MS;
 }
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
