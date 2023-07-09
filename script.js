@@ -5,9 +5,11 @@ function playAudio() {
   if (!audio) {
     audio = new Audio("music.mp3");
     progressBar = document.getElementById("progressBar");
-    progressBar.max = audio.duration;
-    progressBar.value = 0;
-    audio.addEventListener("timeupdate", updateProgressBar);
+    audio.addEventListener("loadedmetadata", function() {
+      progressBar.max = audio.duration;
+      progressBar.value = 0;
+      audio.addEventListener("timeupdate", updateProgressBar);
+    });
   }
   audio.play();
 }
