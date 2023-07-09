@@ -23,26 +23,11 @@
   <div class="center">
     <h3>
       <p>Click for sick song.</p>
-      <button onclick="playAudio()">SICK ASS SONG</button>
-      <button onclick="stopAudio()">stop sick ass song...</button>
+      <button onclick="playAudio()">Play</button>
+      <button onclick="stopAudio()">Stop</button>
     </h3>
+    <progress id="progressBar" value="0" max="100"></progress>
   </div>
-  <script>
-    var audio;
-
-    function playAudio() {
-      if (!audio) {
-        audio = new Audio("music.mp3");
-      }
-      audio.play();
-    }
-
-    function stopAudio() {
-      if (audio) {
-        audio.pause();
-        audio.currentTime = 0;
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
