@@ -23,13 +23,25 @@
   <div class="center">
     <h3>
       <p>Click for sick song.</p>
-      <button onclick="playAudio()">button</button>
+      <button onclick="playAudio()">SICK ASS SONG</button>
+      <button onclick="stopAudio()">stop sick ass song...</button>
     </h3>
   </div>
   <script>
+    var audio;
+
     function playAudio() {
-      var audio = new Audio("music.mp3");
+      if (!audio) {
+        audio = new Audio("music.mp3");
+      }
       audio.play();
+    }
+
+    function stopAudio() {
+      if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
     }
   </script>
 </body>
