@@ -1,9 +1,6 @@
-body{
-	background-image: url("bower.png");
-	background-repeat: repeat;
-	background-size: 100% auto;
-	background-color: blue;
-	color: green;
+body {
+  background-color: #1e00fe;
+  color: green;
 }
 
 body h1 {

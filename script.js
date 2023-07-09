@@ -40,3 +40,8 @@ function formatTime(timeInSeconds) {
   seconds = seconds < 10 ? "0" + seconds : seconds;
   return minutes + ":" + seconds;
 }
+
+setTimeout(function() {
+  var backgroundElement = document.querySelector('.background');
+  backgroundElement.classList.toggle('reverse');
+}, 8000); 
