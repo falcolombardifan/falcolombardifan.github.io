@@ -4,6 +4,15 @@
   <meta charset="utf-8">
   <title>falcolombardi</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+  </style>
 </head>
 <body>
   <div class="a" style="width: 960px; margin: 0 auto;">
@@ -20,10 +29,12 @@
     <p>click!!!:)</p>
     <a href="bowsa.html">:smiling_imp:</a>
   </div>
-  <h3>
-    <p>Click for sick song.</p>
-    <button onclick="playAudio()">button</button>
-  </h3>
+  <div class="center">
+    <h3>
+      <p>Click for sick song.</p>
+      <button onclick="playAudio()">button</button>
+    </h3>
+  </div>
   <script>
     function playAudio() {
       window.open("music.mp3", "width=200", "height=780");
