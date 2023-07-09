@@ -23,10 +23,16 @@
   <div class="center center-buttons">
     <h3>
       <p>Click for sick song.</p>
+      <div class="progress-container">
+        <div class="progress-labels">
+          <span id="currentTime" class="progress-label">0:00</span>
+          <span id="duration" class="progress-label">0:00</span>
+        </div>
+        <progress id="progressBar" value="0" max="100"></progress>
+      </div>
       <button onclick="playAudio()">Play</button>
       <button onclick="stopAudio()">Stop</button>
     </h3>
-    <progress id="progressBar" value="0" max="100"></progress>
   </div>
   <script src="script.js"></script>
 </body>
