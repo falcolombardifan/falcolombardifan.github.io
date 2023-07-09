@@ -27,7 +27,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 50vh;
   flex-direction: column;
   color: red;
   font-family: "Comic Sans MS";
