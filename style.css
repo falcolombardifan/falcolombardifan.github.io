@@ -20,7 +20,7 @@ a {
 .swag {
     text-align: center;
     color: red;
-    font-family: "Comic Sans MS;
+    font-family: "Comic Sans MS";
 }
 
 .center {
@@ -29,4 +29,6 @@ a {
   align-items: center;
   height: 100vh;
   flex-direction: column;
+  color: red;
+  font-family: "Comic Sans MS";
 }
