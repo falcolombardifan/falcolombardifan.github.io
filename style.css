@@ -32,3 +32,7 @@ a {
   color: red;
   font-family: "Comic Sans MS";
 }
+
+.center-buttons {
+   text-align: center;
+ }
