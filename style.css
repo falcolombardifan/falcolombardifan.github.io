@@ -36,3 +36,22 @@ a {
 .center-buttons {
    text-align: center;
  }
+
+
+.progress-container {
+  position: relative;
+}
+
+.progress-labels {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress-label {
+  font-size: 12px;
+  color: #555;
+}
