@@ -1,6 +1,7 @@
 body {
   background-color: #1e00fe;
   color: green;
+  cursor: url(cursor.png), pointer;
 }
 
 body h1 {
