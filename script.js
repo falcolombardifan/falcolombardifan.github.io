@@ -40,8 +40,6 @@ function playAudio() {
   audio.play();
 }
 
-// Rest of your existing code remains unchanged...
-
 function stopAudio() {
   if (audio) {
     audio.pause();
