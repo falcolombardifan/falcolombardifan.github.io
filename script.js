@@ -3,6 +3,8 @@ var progressBar;
 var currentTimeLabel;
 var durationLabel;
 var volumeSlider; // New line to get volume slider element
+var audio = document.getElementById("taco");
+audio.play();
 
 function playAudio() {
   if (!audio) {
