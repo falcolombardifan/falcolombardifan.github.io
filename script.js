@@ -2,11 +2,20 @@ var audio;
 var progressBar;
 var currentTimeLabel;
 var durationLabel;
-var volumeSlider; 
+var volumeSlider; // New line to get volume slider element
 
 function playAudio() {
   if (!audio) {
     audio = new Audio("music.mp3");
+    var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    var audioSource = audioContext.createMediaElementSource(audio);
+    var gainNode = audioContext.createGain();
+
+    // Connect the audio source to the gain node
+    audioSource.connect(gainNode);
+    // Connect the gain node to the audio context's destination (speakers)
+    gainNode.connect(audioContext.destination);
+
     progressBar = document.getElementById("progressBar");
     currentTimeLabel = document.getElementById("currentTime");
     durationLabel = document.getElementById("duration");
@@ -19,18 +28,19 @@ function playAudio() {
       audio.addEventListener("timeupdate", updateProgressBar);
     });
 
-    // Set initial volume to 1 (100%)
-    audio.volume = volumeSlider.value;
+    // Set initial volume
+    gainNode.gain.value = volumeSlider.value;
 
     // Update volume when slider value changes
     volumeSlider.addEventListener('input', function() {
-      // Set the volume of the audio element directly
-      audio.volume = this.value;
+      // Set the gain node value
+      gainNode.gain.value = this.value;
     });
   }
   audio.play();
 }
 
+// Rest of your existing code remains unchanged...
 
 function stopAudio() {
   if (audio) {
