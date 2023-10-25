@@ -20,7 +20,7 @@ function playAudio() {
     });
 
     // Set initial volume to 1 (100%)
-    audio.volume = volumeSlider.value / 100;
+    audio.volume = volumeSlider.value;
 
     // Update volume when slider value changes
     volumeSlider.addEventListener('input', function() {
