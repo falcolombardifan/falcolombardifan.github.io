@@ -2,7 +2,7 @@ var audio;
 var progressBar;
 var currentTimeLabel;
 var durationLabel;
-var volumeSlider;
+var volumeSlider; 
 
 function playAudio() {
   if (!audio) {
@@ -24,10 +24,8 @@ function playAudio() {
 
     // Update volume when slider value changes
     volumeSlider.addEventListener('input', function() {
-      // Convert slider value to a range between 0 and 1
-      const volumeValue = parseFloat(this.value) / 100;
-      // Set the volume of the audio element
-      audio.volume = volumeValue;
+      // Set the volume of the audio element directly
+      audio.volume = this.value;
     });
   }
   audio.play();
