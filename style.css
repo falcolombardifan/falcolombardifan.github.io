@@ -60,14 +60,17 @@ a {
 
 .spin-text {
   display: inline-block;
-  animation: tilt 2s ease-in-out infinite alternate;
+  animation: circularTilt 4s linear infinite;
 }
 
-@keyframes tilt {
-  from {
-    transform: perspective(400px) rotateY(0deg);
+@keyframes circularTilt {
+  0% {
+    transform: perspective(400px) rotateX(0deg) rotateY(0deg) translateZ(0);
   }
-  to {
-    transform: perspective(400px) rotateY(20deg);
+  50% {
+    transform: perspective(400px) rotateX(180deg) rotateY(180deg) translateZ(0);
+  }
+  100% {
+    transform: perspective(400px) rotateX(360deg) rotateY(360deg) translateZ(0);
   }
 }
