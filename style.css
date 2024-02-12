@@ -60,7 +60,7 @@ a {
 
 .spin-text {
   display: inline-block;
-  animation: spin 0.5s linear infinite;
+  animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
