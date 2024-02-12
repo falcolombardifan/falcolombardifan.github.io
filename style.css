@@ -59,11 +59,7 @@ a {
 }
 
 .spin-text {
-  animation: spin .5s linear infinite;
-}
-
-.spin-text {
-  animation: spin .5s linear infinite;
+  animation: spin 0.5s linear infinite;
 }
 
 @keyframes spin {
@@ -73,5 +69,4 @@ a {
   to {
     transform: rotate(360deg);
   }
-}
 }
