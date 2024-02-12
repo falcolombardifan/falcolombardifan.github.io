@@ -58,6 +58,20 @@ a {
   margin-top: 20px;
 }
 
-.slider {
-  width: 100%;
+.spin-text {
+  animation: spin .5s linear infinite;
+}
+
+.spin-text {
+  animation: spin .5s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 }
