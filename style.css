@@ -1,13 +1,47 @@
+html, body{
+  max-width: 100%;
+  overflow-x:hidden;
+}
+
+
 body {
   background-color: #1e00fe;
-  color: green;
+  color: rgb(253, 5, 79);
   cursor: url(cursor.png), pointer;
 }
 
 body h1 {
-	text-shadow: 3px 3px #00ff00;
+	text-shadow: 3px 3px #91ff00;
 	color: white;
-	
+}
+
+.hope {
+  position: absolute;
+  left: 450px;
+  top: 65px;
+  font-size: 20px;
+  font-family: "Comic Sans MS";
+  color: red;
+  text-shadow: 1px 1px #91ff00;
+}
+
+.hopebutmore {
+  position: absolute;
+  right: 450px;
+  top: 223px;
+  font-size: 20px;
+  font-family: "Comic Sans MS";
+  color: red;
+  text-shadow: 1px 1px #91ff00;
+  text-align: right;
+  justify-content: flex-end;
+  align-items: center;
+  display: flex;
+}
+
+img.gif{
+  width: 360px;
+  height: auto;
 }
 
 a {
@@ -54,6 +88,8 @@ a {
   color: #555;
 }
 
+/* chatgpt ahead */
+
 .volume-slider-container {
   margin-top: 20px;
 }
@@ -73,4 +109,10 @@ a {
   100% {
     transform: perspective(400px) rotateX(360deg) rotateY(360deg) translateZ(0);
   }
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
 }

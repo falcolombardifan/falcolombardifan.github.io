@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speedy Gallery</title>
+<style>
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .gallery img {
+    width: 200px;
+    height: auto; 
+    margin: 5px; 
+  }
+</style>
+</head>
+<body>
+<div class="gallery" id="imageGallery"></div>
+
+<script>
+  function loadImages() {
+    fetch('speedy/images.json')
+      .then(response => response.json())
+      .then(data => {
+        var imageGallery = document.getElementById("imageGallery");
+        data.forEach(filename => {
+          var img = document.createElement("img");
+          img.src = 'speedy/' + filename;
+          img.alt = "Image";
+          imageGallery.appendChild(img);
+        });
+      })
+      .catch(error => console.error('Error loading images:', error));
+  }
+
+
+  window.onload = loadImages;
+</script>
+</body>
+</html>
