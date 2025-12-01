@@ -1,53 +1,62 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="darkreader-lock">
-  <title>falcolombardi</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="balls.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fullscreen Video with Music</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    #start {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.5);
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      user-select: none;
+    }
+  </style>
 </head>
 <body>
-<audio id="taco">
-    <source crossorigin="anonymous" src="music.mp3">
-    Your browser does not support the audio element.
-</audio>
-  <div class="background"></div>
-  <h1>
-    <div class="swag">
-      <span style="font-family:'Comic Sans MS';" class="spin-text">
-        <font color="red"> I LOVE BOWSER MELEE!!!!!! </font> <span style="color: #00ff00">&lt;33333</span>
-      </span>
-    </div>
-  </h1>
-  <h2 style="color: pink; text-align: center;">
-    <p>fuck FALCO!!!!</p>
-  </h2>
-  <div class="swag">
-    <p>click!!!:)</p>
-    <a href="bowsa.html">:smiling_imp:</a>
-  </div>
-  <div class="swag">
-    <p>cool awesomes! :)))</p>
-    <a href="cool.html">open!:</a>
-  </div>
-  <div class="center center-buttons">
-    <div class="volume-slider-container">
-      <label for="volume-slider">Volume:</label>
-      <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1">    </div>
-    <h3>
-      <p>Click for sick song.</p>
-      <div class="progress-container">
-        <div class="progress-labels">
-          <span id="currentTime" class="progress-label">0:00</span>
-          <span id="duration" class="progress-label">0:00</span>
-        </div>
-        <progress id="progressBar" value="0" max="100"></progress>
-      </div>
-      <button onclick="playAudio()">Play</button>
-      <button onclick="stopAudio()">Stop</button>
-    </h3>
-  </div>
-  <script src="script.js"></script>
+
+  <video id="bgVideo" autoplay muted loop playsinline>
+    <source src="yourvideo.mp4" type="video/mp4">
+  </video>
+
+  <audio id="bgAudio">
+    <source src="yourmusic.mp3" type="audio/mpeg">
+  </audio>
+
+  <div id="start">Click to Start</div>
+
+  <script>
+    const start = document.getElementById('start');
+    const audio = document.getElementById('bgAudio');
+
+    start.addEventListener('click', () => {
+      audio.play();
+      start.style.display = 'none';
+    });
+  </script>
+
 </body>
 </html>
