@@ -1,62 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fullscreen Video with Music</title>
-
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-    }
-
-    #start {
-      position: fixed;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(0,0,0,0.5);
-      color: white;
-      font-size: 2rem;
-      cursor: pointer;
-      user-select: none;
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Fullscreen Video</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+  video {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+</style>
 </head>
 <body>
 
-  <video id="bgVideo" autoplay muted loop playsinline>
-    <source src="yourvideo.mp4" type="video/mp4">
-  </video>
+<video id="vid" autoplay playsinline>
+  <source src="psychobateman2.mp4" type="video/mp4">
+</video>
 
-  <audio id="bgAudio">
-    <source src="yourmusic.mp3" type="audio/mpeg">
-  </audio>
-
-  <div id="start">Click to Start</div>
-
-  <script>
-    const start = document.getElementById('start');
-    const audio = document.getElementById('bgAudio');
-
-    start.addEventListener('click', () => {
-      audio.play();
-      start.style.display = 'none';
-    });
-  </script>
+<script>
+  // Browsers often block autoplay with audio,
+  // so we force-play anyway. If the browser blocks it,
+  // it simply won’t play until the user interacts.
+  const v = document.getElementById("vid");
+  v.play().catch(()=>{});
+</script>
 
 </body>
 </html>
