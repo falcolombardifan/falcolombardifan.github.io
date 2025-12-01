@@ -3,17 +3,21 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>TwerkRadio</title>
+<title>TwerkRadio - Silent Autoplay</title>
 <style>
+  /* Base reset */
   html, body {
     margin: 0;
     padding: 0;
     height: 100%;
     overflow: hidden;
   }
+  
+  /* Full-screen video styling */
   video {
     position: fixed;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     object-fit: cover;
@@ -22,19 +26,44 @@
 </head>
 <body>
 
-<video id="vid" autoplay playsinline>
+<video id="vid" autoplay muted playsinline loop>
   <source src="Psychobateman2.mp4" type="video/mp4">
+  Your browser does not support the video tag.
 </video>
 
 <script>
-  // Browsers often block autoplay with audio,
-  // so we force-play anyway. If the browser blocks it,
-  // it simply won’t play until the user interacts.
   const v = document.getElementById("vid");
-  v.play().catch(()=>{});
+
+  // This variable tracks if we've already enabled audio
+  let audioEnabled = false;
+
+  // 1. Attempt to start the muted video playback first
+  v.play().catch(error => {
+    // Safety catch: If even muted autoplay fails, ensure video is paused 
+    // so the click handler can start it.
+    console.error("Muted Autoplay Failed:", error);
+    v.pause();
+  });
+
+  // 2. Listener for any click on the entire document
+  // This listener is critical as it provides the required "user gesture."
+  document.addEventListener('click', function unmuteOnClick() {
+    // Only proceed if audio hasn't been enabled yet
+    if (!audioEnabled) {
+      // Unmute the video
+      v.muted = false;
+      
+      // Ensure playback is resumed if it was paused
+      v.play(); 
+
+      // Update the flag
+      audioEnabled = true;
+
+      // Remove the listener so this function only runs once
+      document.removeEventListener('click', unmuteOnClick);
+    }
+  });
 </script>
 
 </body>
 </html>
-
-
